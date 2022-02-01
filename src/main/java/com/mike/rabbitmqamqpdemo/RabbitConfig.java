@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Profile({"tut1","hello-world"})
+
 @Configuration
-public class Tut1Config {
+public class RabbitConfig {
 
     @Bean
     public Queue hello() {
@@ -16,13 +16,13 @@ public class Tut1Config {
 
     @Profile("receiver")
     @Bean
-    public Tut1Receiver receiver() {
-        return new Tut1Receiver();
+    public Receiver receiver() {
+        return new Receiver();
     }
 
     @Profile("sender")
     @Bean
-    public Tut1Sender sender() {
-        return new Tut1Sender();
+    public Sender sender() {
+        return new Sender();
     }
 }
